@@ -3,5 +3,5 @@
 
 # 注意事項  
 ・notesファイルは所有者をrootにして、アクセス権限を「-rw-r--r--」にする。  
-・erase、add_write、rewriteの所有者をrootにして、アクセス権限を「-rwsr-xr-x」にしておく。  
+・write、searchの所有者をrootにして、アクセス権限を「-rwsr-xr-x」にしておく。  
 ・自己紹介にかけるのはASCIIで200文字まで。  
