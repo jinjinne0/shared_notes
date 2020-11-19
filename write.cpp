@@ -7,7 +7,7 @@
 #include "easy_func.hpp"
 
 void usage(char *program){
-    printf("[使用方法]: %s '自己紹介'　",program);
+    printf("[使用方法]: %s '自己紹介'\n",program);
     exit(0);
 }
 
@@ -16,9 +16,21 @@ int main(int argc,char *argv[]){
     int uid=getuid();
 
     //自己紹介に入れる文章
-    char data[200];
+    //余った部分は空白("\t")で埋める
+    char data[205];
+    data[0]='\0';
+    if(strlen(argv[1])>=200){
+        strncat(data,argv[1],200);
+    }
+    else{
+        strncat(data,argv[1],strlen(argv[1]));
+        for(int i=0;i<200-strlen(argv[1]);i++){
+            data[strlen(argv[1])+i]='\0';
+            strncat(data,"\t",1);
+        }
+    }
 
-    int fd=open("notes",O_RDWR);
+    int fd=open("notes",O_RDWR|O_APPEND);
 
     //すでにこのユーザーがnotesに記録されているか否か
     int exist=0;
