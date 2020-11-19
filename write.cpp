@@ -24,13 +24,10 @@ int main(int argc,char *argv[]){
     }
     else{
         strncat(data,argv[1],strlen(argv[1]));
-        for(int i=0;i<200-strlen(argv[1]);i++){
-            data[strlen(argv[1])+i]='\0';
-            strncat(data,"\t",1);
-        }
+        for(int i=strlen(argv[1]);i<200;i++)data[i]='\t';
     }
 
-    int fd=open("notes",O_RDWR|O_APPEND);
+    int fd=open("notes",O_RDWR);
 
     //すでにこのユーザーがnotesに記録されているか否か
     int exist=0;
