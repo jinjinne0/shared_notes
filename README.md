@@ -5,6 +5,8 @@
 ・notesファイルは所有者をrootにして、アクセス権限を「-rw-r--r--」にする。  
 ・write、searchの所有者をrootにして、アクセス権限を「-rwsr-xr-x」にしておく。  
 ・自己紹介にかけるのはASCIIで200文字まで。  
+・notes,write,searchファイルは同じディレクトリに入れておくこと。
+・notesただの空ファイル
 
 # 基本使用
 ・ ./write (書き込みたい自己紹介): noteに自己紹介を書き足すor書き直す  
